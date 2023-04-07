@@ -20,6 +20,9 @@ lxc.cap.drop:
 lxc.mount.auto: cgroup:rw
 ```
 Then save and exit. 
+
+## Add the Coral Drivers
+
 Still in the shell, follow the instructions from the Google Coral Get Started guide (modified to line up with the experience with Proxmox): 
  
 Add the Debian package repository: 
