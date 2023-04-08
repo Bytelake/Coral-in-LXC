@@ -33,8 +33,10 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
 apt-get update
 ```
-Then install the PCIE driver and TPU runtime packages
+Then install pve-headers and the PCIE driver and TPU runtime packages
 ```
+apt install pve-headers-$(uname -r)
+ 
 apt-get install gasket-dkms libedgetpu1-std
 ```
 Reboot the node, then run:
