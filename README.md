@@ -27,15 +27,15 @@ Still in the shell, follow the instructions from the Google Coral Get Started gu
  
 Add the Debian package repository: 
 ```
-echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | sudo tee /etc/apt/sources.list.d/coral-edgetpu.list
+echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | tee /etc/apt/sources.list.d/coral-edgetpu.list
 
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
 sudo apt-get update
 ```
 Then install the PCIE driver and TPU runtime packages
 ```
-sudo apt-get install gasket-dkms libedgetpu1-std
+apt-get install gasket-dkms libedgetpu1-std
 ```
 Reboot the node, then run:
 ```
