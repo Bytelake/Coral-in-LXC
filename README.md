@@ -31,7 +31,7 @@ echo "deb https://packages.cloud.google.com/apt coral-edgetpu-stable main" | tee
 
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
-sudo apt-get update
+apt-get update
 ```
 Then install the PCIE driver and TPU runtime packages
 ```
