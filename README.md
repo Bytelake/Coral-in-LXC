@@ -55,4 +55,4 @@ That should return:
 ```
 /dev/apex_0
 ```
-Now it should be functioning in the container. If not, install the PVE headers reinstall the coral drivers?
+That's it! It's now ready for whatever you want to use it for, though I assume probably Frigate.
