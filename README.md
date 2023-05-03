@@ -8,6 +8,7 @@ nano /etc/pve/nodes/(NODE-NAME)/lxc/(CONTAINER-ID ex. "100").conf
 ```
 Add in:
 ```
+features: nesting=1
 lxc.cgroup2.devices.allow: c 226:0 rwm
 lxc.cgroup2.devices.allow: c 226:128 rwm
 lxc.cgroup2.devices.allow: c 29:0 rwm
