@@ -15,7 +15,7 @@ lxc.cgroup2.devices.allow: c 29:0 rwm
 lxc.cgroup2.devices.allow: c 189:* rwm
 lxc.apparmor.profile: unconfined
 lxc.cgroup2.devices.allow: a
-lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file 0, 0
+lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file 0, 0 #This is for passing through your Intel iGPU
 lxc.mount.entry: /dev/apex_0 dev/apex_0 none bind,optional,create=file 0, 0
 lxc.cap.drop:
 lxc.mount.auto: cgroup:rw
