@@ -6,17 +6,17 @@ First, create a new LXC. Select the advanced box and then deselect the unprivile
 ```
 nano /etc/pve/nodes/(NODE-NAME)/lxc/(CONTAINER-ID ex. "100").conf
 ```
-Add in:
+Add in (This passes through your Intel iGPU as well):
 ```
 features: nesting=1
-lxc.cgroup2.devices.allow: c 226:0 rwm
-lxc.cgroup2.devices.allow: c 226:128 rwm
-lxc.cgroup2.devices.allow: c 29:0 rwm
-lxc.cgroup2.devices.allow: c 189:* rwm
-lxc.apparmor.profile: unconfined
+lxc.cgroup2.devices.allow: c 226:0 rwm #igpu
+lxc.cgroup2.devices.allow: c 226:128 rwm #igpu
+lxc.cgroup2.devices.allow: c 29:0 rwm #coral
+lxc.cgroup2.devices.allow: c 189:* rwm #coral
+lxc.apparmor.profile: unconfined #unbreaks docker for reasons unknown
 lxc.cgroup2.devices.allow: a
-lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file 0, 0 #This is for passing through your Intel iGPU
-lxc.mount.entry: /dev/apex_0 dev/apex_0 none bind,optional,create=file 0, 0
+lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file 0, 0 #igpu
+lxc.mount.entry: /dev/apex_0 dev/apex_0 none bind,optional,create=file 0, 0 #coral
 lxc.cap.drop:
 lxc.mount.auto: cgroup:rw
 ```
